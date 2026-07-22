@@ -29,19 +29,17 @@ YOLOv8 Detection (fine-tuned) ── classifies + localizes: "signature" / "stam
       └── crop → cropped_stamps/
       │
       ▼
-┌─────────────────────────┐        ┌──────────────────────────┐
-│ Signature Extraction     │        │ Stamp Extraction          │
-├─────────────────────────┤        ├──────────────────────────┤
-│ RGB → HSV                │        │ Grayscale conversion       │
-│ Blue-stamp inpainting     │        │ Adaptive thresholding      │
-│ (remove stamp bleed)      │        │ Contour detection +        │
-│ CLAHE contrast enhance    │        │   inpainting                │
-│ Adaptive thresholding     │        │ Contrast −50% /             │
-│ Morphological refine      │        │   Brightness +15%           │
-│ Otsu's thresholding        │        │ Multi-format export         │
-│ Region-size filtering      │        │   (PNG/JPG)                 │
-│ (skimage regionprops)     │        │                              │
-└─────────────────────────┘        └──────────────────────────┘
+ Signature Extraction:              Stamp Extraction:
+
+ RGB → HSV                          Grayscale conversion
+ Blue-stamp inpainting              Adaptive thresholding
+ (remove stamp bleed)               Contour detection + inpainting
+ CLAHE contrast enhance             Contrast −50%/ Brightness +15%
+ Adaptive thresholding              Multi-format export
+ Morphological refine               (PNG/JPG)
+ Otsu's thresholding                          | 
+ Region-size filtering                        |
+ (skimage regionprops)                        |
       │                                       │
       ▼                                       ▼
    Clean signature on white bg          Clean isolated stamp
