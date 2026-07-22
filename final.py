@@ -90,13 +90,9 @@ def remove_signature(image):
 
 # Function to reduce contrast by 50% and increase brightness by 15%
 def reduce_contrast(image, contrast_factor=0.5):
-    # Adjust contrast and brightness using cv2.convertScaleAbs
-    # contrast_factor = 0.5 reduces contrast by 50%
-    # brightness_factor = 38 increases brightness by 15% (255 * 0.15 = 38.25, rounded to 38)
     adjusted_image = cv2.convertScaleAbs(image, alpha=contrast_factor, beta=38)
     return adjusted_image
 
-# Main function to process images
 def process_stamps(input_folder, output_folder):
     # Create output folder if it doesn't exist
     if not os.path.exists(output_folder):
@@ -295,7 +291,6 @@ def process_image_combined(img_path, output_folder, debug_folder):
         pre_version = morphology.remove_small_objects(blobs_labels, a4_small_size_outliar_constant)
         component_sizes = np.bincount(pre_version.ravel())
         
-        # Handle edge case: if no components are large enough
         if len(component_sizes) == 0 or component_sizes.max() == 0:
             raise ValueError("No significant components found after filtering")
 
@@ -327,8 +322,6 @@ def process_folder_combined(input_folder, output_folder):
     debug_folder = os.path.join(output_folder, "debug")
     os.makedirs(output_folder, exist_ok=True)
 
-    # Find all images in the input folder
-# Corrected pattern for all common image formats
     valid_extensions = ['*.jpg', '*.jpeg', '*.png', '*.bmp', '*.tif', '*.tiff']
 
     image_files = []
