@@ -7,8 +7,11 @@ Automated detection, extraction, and separation of **signatures** and **stamps**
 ![OpenCV](https://img.shields.io/badge/CV-OpenCV-green)
 
 ## Overview
---
-![Overall Architecture](.media/achitecture.jpg.png)
+
+---
+
+![Overall Architecture](./media/achitecture.jpg.png)
+
 Scanned legal/financial documents often need signatures and stamps isolated for forensic or verification analysis, but the two overlap, vary in ink color, and sit on noisy paper backgrounds — making naive cropping or thresholding unreliable. This project combines:
 
 1. **Detection** — a YOLOv8 model (pre-trained, fine-tuned on a custom-annotated dataset of scanned documents) localizes signature and stamp regions.
@@ -46,13 +49,12 @@ YOLOv8 Detection (fine-tuned) ── classifies + localizes: "signature" / "stam
 
 ## Demo
 
-*(Add your input/output comparison images here — you already have great before/after captures from the hackathon writeup.)*
 
 | Stage | Input | Output |
 |---|---|---|
-| YOLOv8 detection | `./media/detection_input.jpg` | `./media/detection_output.jpg` |
-| Signature extraction | `./media/signature_input.jpg` | `./media/signature_output.jpg` |
-| Stamp extraction | `./media/stamp_input.jpg` | `./media/stamp_output.jpg` |
+| YOLOv8 detection | ![Detection Input](./media/detection_input.jpg) | ![Detection Output](./media/detection_output.jpg) |
+| Signature extraction | [Signature Input](./media/signature_input.jpg) | [Signature Output](./media/signature_output.jpg) |
+| Stamp extraction | [Stamp Input](./media/stamp_input.jpg) | [Stamp Output](./media/stamp_output.jpg) |
 
 ## Key Technical Details
 
