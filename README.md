@@ -53,8 +53,8 @@ YOLOv8 Detection (fine-tuned) ── classifies + localizes: "signature" / "stam
 | Stage | Input | Output |
 |---|---|---|
 | YOLOv8 detection | ![Detection Input](./media/detection_input.jpg) | ![Detection Output](./media/detection_output.jpg) |
-| Signature extraction | [Signature Input](./media/signature_input.jpg) | [Signature Output](./media/signature_output.jpg) |
-| Stamp extraction | [Stamp Input](./media/stamp_input.jpg) | [Stamp Output](./media/stamp_output.jpg) |
+| Signature extraction | ![Signature Input](./media/signature_input.jpg) | ![Signature Output](./media/signature_output.jpg) |
+| Stamp extraction | ![Stamp Input](./media/stamp_input.jpg) | ![Stamp Output](./media/stamp_output.jpg) |
 
 ## Key Technical Details
 
